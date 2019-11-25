@@ -42,7 +42,7 @@ no=n
 		sleep .5
 	fi
 	zdir=/mnt/c/Users/$user/Desktop/Zapplogs/$casenum
-
+	echo $zdir
 #clear the folder of previous logs
 	if [ "$(ls -A $zdir)" ]
 	then
@@ -68,13 +68,13 @@ no=n
 	echo -n "Please drag the Unzipped ZApp Logs Here: "
 	read -r winaddress
 	logs=$(wslpath -a "$winaddress")
-	echo Zipped Zapp Logs path is $logs
-	cp -r $logs/* $zdir
+	echo UnZipped Zapp logs path is $logs
+	sudo cp -r $logs/* $zdir
 #	echo
 #	tar -xzvf $zippedlogs  -C $zdir/$casenum
 
 #pass vairables and run the app
-	sh ./zla.sh $zdir $date
+#	sh ./zla.sh $zdir $date
 
 
 
