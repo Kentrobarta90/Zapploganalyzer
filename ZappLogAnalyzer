@@ -6,7 +6,8 @@ yes=y
 no=n
 
 #Get the username
-	user="$(whoami)"
+	echo -n "Please insert your Windows UserName: "
+	read user
 #	echo User Variable set to $user
 
 #Get Case Number
@@ -73,7 +74,7 @@ no=n
 #	tar -xzvf $zippedlogs  -C $zdir/$casenum
 
 #pass vairables and run the app
-	sh ./zapploganalyzer.sh $zdir $date
+	sh ./zla.sh $zdir $date
 
 
 
