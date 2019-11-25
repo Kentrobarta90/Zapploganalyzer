@@ -1,0 +1,81 @@
+#!/bin/bash
+echo "This script will run ZApp Log Analyzer"
+echo
+#Global Variables
+yes=y
+no=n
+
+#Get the username
+	user="$(whoami)"
+#	echo User Variable set to $user
+
+#Get Case Number
+	echo -n "What is the Case Number? "
+	read casenum
+#	echo Case Variable set to $casenum
+
+#get the date variable
+	echo -n "Which Month of Logs would you like to analyze? [yyyy-mm] "
+	read date
+#	echo the date variable is $date
+
+#setting the working directory
+	zdir=/mnt/c/Users/$user/Desktop
+#	echo Directory variable set to $zdir
+
+#check if directory is already made if not make it
+	if [ ! -d $zdir/Zapplogs ]
+	then
+		echo Directory $zdir/Zapplogs does not exist, creating now...
+		mkdir $zdir/Zapplogs
+		sleep .5
+	fi
+	zdir=/mnt/c/Users/$user/Desktop/Zapplogs
+#	echo Directory Variable set to $zdir
+
+#check if case directory is already made if not make it
+	if [ ! -d $zdir/$casenum ]
+	then
+		echo Directory $zdir/$casenum does not exist, creating now...
+		mkdir $zdir/$casenum
+		sleep .5
+	fi
+	zdir=/mnt/c/Users/$user/Desktop/Zapplogs/$casenum
+
+#clear the folder of previous logs
+	if [ "$(ls -A $zdir)" ]
+	then
+#		echo There are files
+		echo -n "Would you like to delete the previous logs? [y/n] "
+		read ans
+#		echo $ans
+		if [ $ans == $yes ]
+		then
+			echo Deleting logs now...
+			rm -f $zdir/*
+			sleep .5
+#			echo the test read as yes
+#		else
+#			echo We are not deleting the logs, however some might be overwritten moving forward....
+#			echo the test read as no
+		fi
+#	else
+#		echo There are no files
+	fi
+
+#unzip the file into the case directory
+	echo -n "Please drag the Unzipped ZApp Logs Here: "
+	read -r winaddress
+	logs=$(wslpath -a "$winaddress")
+	echo Zipped Zapp Logs path is $logs
+	cp -r $logs/* $zdir
+#	echo
+#	tar -xzvf $zippedlogs  -C $zdir/$casenum
+
+#pass vairables and run the app
+	sh ./zapploganalyzer.sh $zdir $date
+
+
+
+
+
