@@ -1,19 +1,21 @@
 Needed Stuff:
 Windows Side Loaded Linux BASH Shell
 Decrypted and Unzipped Zapp Logs (preferably on desktop)
-
-
+----------------------------------------------------------
+Windows:
 Instructions:
-extract the ZLA file to desktop.
-open command prompt
-type cd C:\Users\[your username here]\Desktop
-type wsl tar -xzvf ZLA-1.4.tar.gz
+Open command prompt
+Change directory to where you extracted your files to. 
 
 To run type:
 wsl ./ZappLogAnalyzer
+----------------------------------------------------------
+Linux/Mac:
+Open terminal
+Change directory to where you extracted your files to.
 
-It will create the Zapplogs Folder for you if you do not have it.
 
-Follow prompts.
+To run type:
+./ZappLogAnalyzer
+----------------------------------------------------------
 
-Recieve output.
