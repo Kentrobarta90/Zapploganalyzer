@@ -68,5 +68,5 @@ cat $1/ZSATunnel* |grep $2| grep -e fail -e error -e allow -e Port.*NOT.*found |
 echo;
 echo ==========================================================;
 echo ==========================================================;
-cd /mnt/c/Users/jwegman/Desktop/zapplogs;
-cp -r $1 /mnt/c/Users/jwegman/Desktop/zapplogs-backup
+#cd /mnt/c/Users/jwegman/Desktop/zapplogs;
+#cp -r $1 /mnt/c/Users/jwegman/Desktop/zapplogs-backup
