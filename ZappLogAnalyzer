@@ -6,9 +6,10 @@ yes=y
 no=n
 
 #Get the username
-	echo -n "Please insert your Windows UserName: "
-	read user
-#	echo User Variable set to $user
+#	echo -n "Please insert your Windows UserName: "
+#	read user
+	user="$(whoami)"
+	echo User Variable set to $user
 
 #Get Case Number
 	echo -n "What is the Case Number? "
@@ -69,12 +70,12 @@ no=n
 	read -r winaddress
 	logs=$(wslpath -a "$winaddress")
 	echo UnZipped Zapp logs path is $logs
-	sudo cp -r $logs/* $zdir
+	cp -r $logs/* $zdir
 #	echo
 #	tar -xzvf $zippedlogs  -C $zdir/$casenum
 
 #pass vairables and run the app
-#	sh ./zla.sh $zdir $date
+	sh ./zla.sh $zdir $date $user
 
 
 
