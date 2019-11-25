@@ -7,7 +7,7 @@ Instructions:
 extract the ZLA file to desktop.
 open command prompt
 type cd C:\Users\[your username here]\Desktop
-type tar -xzvf ZLA-1.3.tar.gz
+type wsl tar -xzvf ZLA-1.4.tar.gz
 
 To run type:
 wsl ./ZappLogAnalyzer
