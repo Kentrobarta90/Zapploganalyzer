@@ -15,7 +15,7 @@ Change directory to where you extracted your files to.
 
 To run type:
 
-wsl ./ZappLogAnalyzer
+`wsl ./ZappLogAnalyzer`
 
 Linux/Mac:
 ----------------------------------------------------------
@@ -26,6 +26,6 @@ Change directory to where you extracted your files to.
 
 To run type: 
 
-./ZappLogAnalyzer
+`./ZappLogAnalyzer`
 
 
