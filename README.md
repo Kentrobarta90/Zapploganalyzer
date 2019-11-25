@@ -5,11 +5,9 @@ Windows Side Loaded Linux BASH Shell
 
 Decrypted and Unzipped Zapp Logs (preferably on desktop)
 
-Instructions: 
 
 Windows:
 ----------------------------------------------------------
-
 
 Open command prompt
 
